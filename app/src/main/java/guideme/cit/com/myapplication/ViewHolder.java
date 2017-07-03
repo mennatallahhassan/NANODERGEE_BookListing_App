@@ -9,11 +9,11 @@ import android.widget.TextView;
 
 public class ViewHolder {
 
+    public TextView author;
+    public TextView title;
+
     public ViewHolder(View view) {
         this.author = (TextView) view.findViewById(R.id.author);
         this.title = (TextView) view.findViewById(R.id.bookTitle);
     }
-
-    public TextView author;
-    public TextView title;
 }

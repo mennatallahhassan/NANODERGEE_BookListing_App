@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 import java.util.List;
 
@@ -37,7 +36,7 @@ public class Adapter extends ArrayAdapter {
         Book book = bookList.get(position);
         viewHolder.title.setText("Title: " + book.getTitle().toString());
         if (bookList.get(position).getAuthors() != null) {
-            viewHolder.author.setText("Author: " + book.getAuthors().toString());
+            viewHolder.author.setText("Author: " + book.getAuthors());
         } else {
             viewHolder.author.setText("No Author");
         }

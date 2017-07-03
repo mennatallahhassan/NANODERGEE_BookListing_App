@@ -5,7 +5,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by boody 2 on 30/06/2017.
@@ -28,7 +27,7 @@ public class JsonParsing {
                     //book.setSubtitle(jsonObjectBook.getString("subtitle"));
 
                     JSONArray authorsArray = jsonObjectBook.getJSONObject("volumeInfo").optJSONArray("authors");
-                    if(authorsArray != null) {
+                    if (authorsArray != null) {
                         for (int m = 0; m < authorsArray.length(); m++) {
                             book.setAuthors(authorsArray.getString(m));
                         }

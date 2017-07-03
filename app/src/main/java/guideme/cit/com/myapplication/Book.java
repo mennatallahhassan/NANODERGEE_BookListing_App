@@ -3,20 +3,28 @@ package guideme.cit.com.myapplication;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.Serializable;
-
 /**
  * Created by boody 2 on 30/06/2017.
  */
 
 public class Book implements Parcelable {
+    public static final Parcelable.Creator<Book> CREATOR
+            = new Parcelable.Creator<Book>() {
+        public Book createFromParcel(Parcel in) {
+            return new Book(in);
+        }
+
+        public Book[] newArray(int size) {
+            return new Book[size];
+        }
+    };
     String title;
     String subtitle;
     String authors;
     String description;
 
     public Book() {
-        
+
     }
 
     public Book(Parcel input) {
@@ -70,15 +78,4 @@ public class Book implements Parcelable {
         parcel.writeString(authors);
         parcel.writeString(description);
     }
-
-    public static final Parcelable.Creator<Book> CREATOR
-            = new Parcelable.Creator<Book>() {
-        public Book createFromParcel(Parcel in) {
-            return new Book(in);
-        }
-
-        public Book[] newArray(int size) {
-            return new Book[size];
-        }
-    };
 }
